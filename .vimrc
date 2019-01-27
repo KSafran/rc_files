@@ -26,7 +26,16 @@ Plugin 'joshdick/onedark.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+
+" Key Remapping
 :inoremap jj <Esc>
+map <silent> <leader>pdb Oimport pdb; pdb.set_trace()<esc>
+" Arrow Keys are bad
+noremap <Up>    <Nop>
+noremap <Down>  <Nop>
+noremap <Left>  <Nop>
+noremap <Right> <Nop>
+
 set number
 
 " ---- Minimal configuration:
@@ -42,7 +51,6 @@ set smarttab    " At <Tab> at beginning line inserts spaces set in
 set relativenumber
 set nu rnu
 
-map <silent> <leader>pdb Oimport pdb; pdb.set_trace()<esc>
 set scrolloff=1
 
 colorscheme onedark
