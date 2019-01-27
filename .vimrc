@@ -44,9 +44,6 @@ set nu rnu
 
 map <silent> <leader>pdb Oimport pdb; pdb.set_trace()<esc>
 set scrolloff=1
-set statusline+=%#PmenuSel#
-set statusline+=\ %p%%                " Percentage through file
-set statusline+=\ %l:%c               " Line number:Column number
 
 colorscheme onedark
 "---- Copy to clipbaord:
@@ -60,3 +57,13 @@ set backspace=indent,eol,start
 set incsearch
 set ttimeout
 set ttimeoutlen=100
+" Statusline Stuff
+" https://hackernoon.com/the-last-statusline-for-vim-a613048959b2
+set laststatus=2  " always show statusline
+set statusline=
+set statusline+=%#function#
+set statusline+=\ %F
+set statusline+=%=
+set statusline+=\ ‹‹
+set statusline+=\ %l:%c
+set statusline+=\ ››\ %*
