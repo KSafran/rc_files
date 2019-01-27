@@ -15,6 +15,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'jnurmine/Zenburn'
 Plugin 'tpope/vim-fugitive'
 Plugin 'joshdick/onedark.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 
 
 " add all your plugins here (note older versions of Vundle
