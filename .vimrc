@@ -58,7 +58,8 @@ set scrolloff=1
 colorscheme onedark
 "---- Copy to clipbaord:
 "set clipboard=unnamed " stopped this to keep copying straight
-mapleader=" "
+nnoremap <SPACE> <Nop>
+let mapleader = "\<Space>"
 noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+y
