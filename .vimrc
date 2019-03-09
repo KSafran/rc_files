@@ -53,6 +53,8 @@ set smarttab    " At <Tab> at beginning line inserts spaces set in
 " ---- Relative Line Numbers
 set relativenumber
 set nu rnu
+" -------- YAML config
+autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set scrolloff=1
 
