@@ -18,7 +18,8 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'python/black'
+Plugin 'itchyny/lightline.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -32,7 +33,7 @@ filetype plugin indent on    " required
 
 " Key Remapping
 :inoremap jj <Esc>
-map <silent> <leader>pdb Oimport pdb; pdb.set_trace()<esc>
+map <leader>bp Obreakpoint()<esc>
 " Arrow Keys are bad
 noremap <Up>    <Nop>
 noremap <Down>  <Nop>
@@ -53,8 +54,6 @@ set smarttab    " At <Tab> at beginning line inserts spaces set in
 " ---- Relative Line Numbers
 set relativenumber
 set nu rnu
-" -------- YAML config
-autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 expandtab
 
 set scrolloff=1
 
@@ -65,8 +64,9 @@ nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 noremap <Leader>y "*y
 noremap <Leader>p "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
+noremap <Leader>Y "+Y
+noremap <Leader>P "+P
+noremap <Leader>c V"*y
 
 " fuzzy file match
 set path+=**
@@ -77,12 +77,19 @@ set incsearch
 set ttimeout
 set ttimeoutlen=100
 " Statusline Stuff
-" https://hackernoon.com/the-last-statusline-for-vim-a613048959b2
 set laststatus=2  " always show statusline
-set statusline=
-set statusline+=%#function#
-set statusline+=\ %F
-set statusline+=%=
-set statusline+=\ ‹‹
-set statusline+=\ %l:%c
-set statusline+=\ ››\ %*
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+" autocmd BufWritePost *.py execute ':Black'
+
+" close annoying YouCompleteMe scratch space
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
