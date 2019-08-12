@@ -93,3 +93,8 @@ let g:lightline = {
 " close annoying YouCompleteMe scratch space
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" netrw setting
+let g:netrw_browse_split = 3
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
