@@ -3,6 +3,11 @@ syntax on
 set nocompatible              " required
 filetype off                  " required
 
+" if changes are made from outside read them in
+set autoread
+" Set 7 lines to the cursor - when moving vertically using j/k
+set so=7
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -56,6 +61,14 @@ set relativenumber
 set nu rnu
 
 set scrolloff=1
+set ignorecase
+set hlsearch
+set noerrorbells
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
 
 colorscheme onedark
 "---- Copy to clipbaord:
@@ -67,6 +80,9 @@ noremap <Leader>p "*p
 noremap <Leader>Y "+Y
 noremap <Leader>P "+P
 noremap <Leader>c V"*y
+
+map <leader>tn :tabnew<cr>
+map <leader>tf :tabfind<cr>
 
 " fuzzy file match
 set path+=**
