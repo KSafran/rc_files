@@ -63,6 +63,8 @@ set nu rnu
 set scrolloff=1
 set ignorecase
 set hlsearch
+" ---- ctrl-L turns off highlight
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 set noerrorbells
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
