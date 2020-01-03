@@ -56,9 +56,6 @@ set expandtab     " When using <Tab>, put spaces instead of a <tab>
 set tabstop=4   " Number of spaces that a <Tab> in the file counts for
 set smarttab    " At <Tab> at beginning line inserts spaces set in
 
-" ---- Relative Line Numbers
-set relativenumber
-set nu rnu
 
 set scrolloff=1
 set ignorecase
@@ -83,8 +80,9 @@ noremap <Leader>Y "+Y
 noremap <Leader>P "+P
 noremap <Leader>c V"*y
 
-map <leader>tn :tabnew<cr>
-map <leader>tf :tabfind<cr>
+map <leader>tn :tabnew<space>
+map <leader>tf :tabfind<space>
+noremap <leader><cr> :w ! python<cr>
 
 " fuzzy file match
 set path+=**
