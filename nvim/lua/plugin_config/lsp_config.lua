@@ -8,6 +8,9 @@ require("luasnip/loaders/from_vscode").load()
 lspconfig.pyright.setup({
     capabilities = capabilities,
 })
+lspconfig.terraformls.setup({
+    capabilities = capabilities
+})
 
 -- Example for Lua (sumneko_lua)
 lspconfig.lua_ls.setup({
@@ -29,3 +32,4 @@ lspconfig.lua_ls.setup({
         },
     },
 })
+

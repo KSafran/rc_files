@@ -1,5 +1,7 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+    use 'folke/tokyonight.nvim'
+    use "EdenEast/nightfox.nvim"
 
     -- Plugins
     -- use { 'neoclide/coc.nvim', branch = 'release' }
@@ -15,19 +17,25 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp'
     use 'rafamadriz/friendly-snippets'
 
-    use { 'github/copilot.vim', branch = 'release' }   use 'junegunn/fzf'
+    use { 'github/copilot.vim', branch = 'release' }
+    use 'junegunn/fzf'
+
+    use { "ibhagwan/fzf-lua",
+      -- optional for icon support
+      requires = { "nvim-tree/nvim-web-devicons" }
+      -- or if using mini.icons/mini.nvim
+      -- requires = { "echasnovski/mini.icons" }
+    }
     --
     --
-    use 'junegunn/fzf.vim'
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-unimpaired'
-    use 'tpope/vim-repeat'
-    use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
     use 'itchyny/lightline.vim'
+    -- Colors
     use 'joshdick/onedark.vim'
-    use 'vim-syntastic/syntastic'
-    use 'Chiel92/vim-autoformat'
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
     use 'python/black'
-    use 'jpalardy/vim-slime'
 end)

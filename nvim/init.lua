@@ -10,11 +10,11 @@ require('plugins')
 -- Load autocmds
 require('autocmds')
 
-
 -- Load Lightline
 require('lightline')
 
 -- CMP and LSP
 require('plugin_config/completions')
 require('plugin_config/lsp_config')
+require('plugin_config/tree_sitter')
 

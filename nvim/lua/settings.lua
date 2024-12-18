@@ -29,9 +29,8 @@ set.autoread = true
 set.so = 7
 set.ttimeout = true
 set.ttimeoutlen = 100
-set.clipboard = "unnamedplus"
+-- set.clipboard = "unnamedplus"
 set.laststatus = 2
-set.statusline = "%#warningmsg# %{SyntasticStatuslineFlag()} %*"
 
 -- Python provider
 vim.g.pymode_python = 'python3'
@@ -42,16 +41,6 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 
 -- Colorscheme
-vim.cmd("colorscheme onedark")
-
--- Syntastic
-vim.g.syntastic_always_populate_loc_list = 1
-vim.g.syntastic_auto_loc_list = 1
-vim.g.syntastic_check_on_open = 1
-vim.g.syntastic_check_on_wq = 0
-vim.g.syntastic_python_checkers = { 'flake8' }
-
--- Slime
-vim.g.slime_target = "tmux"
-vim.g.slime_default_config = { socket_name = "default", target_pane = "{last}" }
-vim.g.slime_python_ipython = 1
+-- vim.cmd.colorscheme "catppuccin"
+-- vim.cmd.colorscheme "tokyonight"
+vim.cmd("colorscheme nightfox")
