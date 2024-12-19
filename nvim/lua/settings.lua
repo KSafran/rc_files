@@ -10,8 +10,6 @@ set.updatetime = 300
 set.shortmess:append("c")
 set.signcolumn = "yes"
 
--- Python provider
-vim.g.python3_host_prog = vim.fn.expand("~/.config/nvim/env/bin/python")
 
 set.number = true
 set.smartindent = true
@@ -32,8 +30,9 @@ set.ttimeoutlen = 100
 -- set.clipboard = "unnamedplus"
 set.laststatus = 2
 
--- Python provider
-vim.g.pymode_python = 'python3'
+-- -- Python provider
+-- vim.g.pymode_python = 'python3'
+vim.env.PATH = vim.fn.expand("$HOME/.config/nvim/env/bin") .. ":" .. vim.env.PATH
 
 -- Netrw settings
 vim.g.netrw_browse_split = 3
@@ -41,6 +40,4 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 
 -- Colorscheme
--- vim.cmd.colorscheme "catppuccin"
--- vim.cmd.colorscheme "tokyonight"
 vim.cmd("colorscheme nightfox")

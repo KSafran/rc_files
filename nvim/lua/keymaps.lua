@@ -1,6 +1,7 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 local fzf = require('fzf-lua')
+local luasnip = require('luasnip')
 
 -- General mappings
 -- Disable the space key as a normal mode mapping
@@ -48,8 +49,8 @@ map("n", "<C-g>", ":Ag<CR>", opts)
 -- Highlight toggle
 map("n", "<C-L>", ":nohlsearch<CR><C-L>", opts)
 
--- Black on C-q
-map("n", "<C-q>", ":!black %<CR>", opts)
+-- -- Black on C-q
+-- map("n", "<C-q>", ":!black %<CR>", opts)
 
 -- Recommended fzf keybindings
 vim.keymap.set('n', '<leader>ff', fzf.files, { desc = "Find Files" })
@@ -58,3 +59,16 @@ vim.keymap.set('n', '<leader>fb', fzf.buffers, { desc = "List Buffers" })
 vim.keymap.set('n', '<leader>fh', fzf.help_tags, { desc = "Help Tags" })
 vim.keymap.set('n', '<leader>fc', fzf.git_commits, { desc = "Git Commits" })
 vim.keymap.set('n', '<leader>fs', fzf.grep_cword, { desc = "Search Word Under Cursor" })
+
+
+vim.keymap.set({ "i", "s" }, "<C-l>", function()
+    if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+    end
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<C-h>", function()
+    if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+    end
+end, { silent = true })
