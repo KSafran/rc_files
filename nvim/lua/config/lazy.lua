@@ -33,9 +33,19 @@ require("lazy").setup({
             dependencies = { "nvim-tree/nvim-web-devicons" }
         },
 
-        { 'tpope/vim-commentary' },
+        {
+            'numToStr/Comment.nvim',
+            opts = {},
+        },
         { 'itchyny/lightline.vim' },
         { 'python/black' },
+        {
+            "iamcco/markdown-preview.nvim",
+            cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+            ft = { "markdown" },
+            build = function() vim.fn["mkdp#util#install"]() end,
+        },
         { import = "config.plugins" }
     },
+    lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",
 })

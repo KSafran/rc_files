@@ -43,8 +43,8 @@ map("n", "<leader>tn", ":tabnew<CR>", opts)
 map("n", "<leader>tf", ":tabfind<CR>", opts)
 
 -- FZF
-map("n", "<C-f>", ":GFiles<CR>", opts)
-map("n", "<C-g>", ":Ag<CR>", opts)
+map("n", "<C-f>", "<Cmd>FzfLua files<CR>", opts)
+map("n", "<C-g>", "<Cmd>FzfLua live_grep<CR>", opts)
 
 -- Highlight toggle
 map("n", "<C-L>", ":nohlsearch<CR><C-L>", opts)
@@ -60,6 +60,9 @@ vim.keymap.set('n', '<leader>fh', fzf.help_tags, { desc = "Help Tags" })
 vim.keymap.set('n', '<leader>fc', fzf.git_commits, { desc = "Git Commits" })
 vim.keymap.set('n', '<leader>fs', fzf.grep_cword, { desc = "Search Word Under Cursor" })
 
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Delete current buffer" })
 
 vim.keymap.set({ "i", "s" }, "<C-l>", function()
     if luasnip.expand_or_jumpable() then

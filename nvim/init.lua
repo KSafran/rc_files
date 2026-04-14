@@ -6,6 +6,8 @@ require("config.lazy")
 -- Load settings
 require('settings')
 
+require('fzf')
+
 -- Load keymaps
 require('keymaps')
 

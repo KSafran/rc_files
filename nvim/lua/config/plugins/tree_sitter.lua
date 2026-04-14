@@ -12,7 +12,8 @@ return {
                     additional_vim_regex_highlighting = false,                                                     -- Avoid redundancy
                 },
                 indent = {
-                    enable = true, -- Enable Treesitter-based indentation
+                    enable = true,          -- Enable Treesitter-based indentation
+                    disable = { "python" }, -- Python indentation is more stable without Treesitter indent
                 },
                 auto_install = true,
             })

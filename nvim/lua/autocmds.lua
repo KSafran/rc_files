@@ -3,12 +3,15 @@
 --     command = ":silent! Black"
 -- })
 
--- vim.api.nvim_create_autocmd({"BufWritePre"}, {
---   pattern = {"*.tf", "*.tfvars"},
---   callback = function()
---     vim.lsp.buf.format({ async = false })
---   end,
--- })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "vue",
+    callback = function()
+        vim.bo.tabstop = 2
+        vim.bo.shiftwidth = 2
+        vim.bo.expandtab = true
+    end,
+})
+
 vim.api.nvim_create_user_command("SqlfluffFix", function()
     local file = vim.fn.expand("%:p") -- Get the full path of the current file
     local cmd = "sqlfluff fix " .. file .. " --dialect postgres"
